@@ -10,7 +10,7 @@ import ValidationMessage from './ValidationMessage'
 const SignUpPage: React.FC = () => {
   const { register, handleSubmit, errors, formState, reset } = useForm<SingUpData>({ mode: 'onChange' })
   const { isValid, isSubmitted, dirtyFields } = formState
-  const onReset = useCallback(() => reset(), [])
+  const onReset = useCallback(() => reset(), [reset])
 
   const getInputClassNames = useCallback(
     (fieldName: string) => {

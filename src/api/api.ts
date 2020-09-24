@@ -8,8 +8,12 @@ export async function signUp(userData: SingUpData) {
     campaignUuid: '46aa3270-d2ee-11ea-a9f0-e9a68ccff42a',
     data: userData
   }
-  const response = await axios.post(url + '/signup', data)
-  return response.data
+  try {
+    const response = await axios.post(url + '/signup', data)
+    return response.data
+  } catch (e) {
+    alert('Something went wrong. Please, try again')
+  }
 }
 
 export async function checkEmailValidity(email: string) {
